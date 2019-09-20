@@ -1,11 +1,11 @@
-console.log("hi there");
 import { User } from './models/User'
 
 const user = new User({name: "Leo", age: 20})
 
-user.set({ age: 98})
+user.on("click", () => {console.log("change 1")})
+user.on("click", () => {console.log("change 2")})
+user.on("hover", () => {console.log("change 3")})
 
-console.log(user.get("name"),
-user.get("age"))
+user.trigger("hover")
 
 
